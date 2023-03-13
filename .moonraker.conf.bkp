@@ -28,6 +28,10 @@ trusted_clients =
 
 [history]
 
+[power TOOLHEAD_LED]
+type = klipper_device
+object_name = output_pin LED
+
 [announcements]
 subscriptions = 
 	mainsail
