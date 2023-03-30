@@ -36,17 +36,12 @@ ffmpeg_binary_path = /usr/bin/ffmpeg
 type = klipper_device
 object_name = output_pin LED
 
-[power LOCK_KLICKY]
-type = klipper_device
-object_name = gcode_macro LOCK_KLICKY
-locked_while_printing = True
-
-[power LOCK_KLICKY_ATTACHING]
+[power KLICKY_ATTACHING_LOCKED]
 type = klipper_device
 object_name = gcode_macro LOCK_KLICKY_ATTACHING
 locked_while_printing = True
 
-[power LOCK_KLICKY_DOCKING]
+[power KLICKY_DOCKING_LOCKED]
 type = klipper_device
 object_name = gcode_macro LOCK_KLICKY_DOCKING
 locked_while_printing = True
