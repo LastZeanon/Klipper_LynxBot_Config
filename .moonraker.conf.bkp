@@ -35,6 +35,7 @@ ffmpeg_binary_path = /usr/bin/ffmpeg
 [power TOOLHEAD_LED]
 type = klipper_device
 object_name = output_pin LED
+locked_while_printing = False
 
 [power KLICKY_ATTACHING_LOCKED]
 type = klipper_device
