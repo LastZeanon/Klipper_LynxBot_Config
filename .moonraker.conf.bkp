@@ -32,9 +32,14 @@ trusted_clients =
 output_path = ~/timelapse/
 ffmpeg_binary_path = /usr/bin/ffmpeg
 
-[power TOOLHEAD_LIGHT]
+[power NOZZLE_LIGHT]
 type = klipper_device
-object_name = gcode_macro SET_TOOLHEAD_LIGHT
+object_name = gcode_macro SET_NOZZLE_LIGHT
+locked_while_printing = FALSE
+
+[power STATUS_LIGHT]
+type = klipper_device
+object_name = gcode_macro SET_STATUS_LIGHT
 locked_while_printing = FALSE
 
 [power KLICKY_ATTACHING_LOCKED]
