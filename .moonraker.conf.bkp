@@ -34,12 +34,12 @@ ffmpeg_binary_path = /usr/bin/ffmpeg
 
 [power NOZZLE_LIGHT]
 type = klipper_device
-object_name = gcode_macro SET_NOZZLE_LIGHT
+object_name = gcode_macro NOZZLE_LIGHT
 locked_while_printing = FALSE
 
 [power STATUS_LIGHT]
 type = klipper_device
-object_name = gcode_macro SET_STATUS_LIGHT
+object_name = gcode_macro STATUS_LIGHT
 locked_while_printing = FALSE
 
 [power KLICKY_ATTACHING_LOCKED]
