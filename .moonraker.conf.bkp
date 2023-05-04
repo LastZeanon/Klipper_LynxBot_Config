@@ -32,14 +32,14 @@ trusted_clients =
 output_path = ~/timelapse/
 ffmpeg_binary_path = /usr/bin/ffmpeg
 
-[power NOZZLE_LIGHT]
-type = klipper_device
-object_name = gcode_macro NOZZLE_LIGHT
-locked_while_printing = FALSE
-
 [power STATUS_LIGHT]
 type = klipper_device
 object_name = gcode_macro STATUS_LIGHT
+locked_while_printing = FALSE
+
+[power NOZZLE_LIGHT]
+type = klipper_device
+object_name = gcode_macro NOZZLE_LIGHT
 locked_while_printing = FALSE
 
 [power LED_BARS]
@@ -88,19 +88,18 @@ path = ~/mainsail-config
 origin = https://github.com/mainsail-crew/mainsail-config.git
 managed_services = klipper
 
-[update_manager timelapse]
-type = git_repo
-primary_branch = main
-path = ~/moonraker-timelapse
-origin = https://github.com/mainsail-crew/moonraker-timelapse.git
-managed_services = klipper moonraker
+[update_manager fluidd]
+type = web
+channel = stable
+repo = fluidd-core/fluidd
+path = ~/fluidd
 
-[update_manager crowsnest]
+[update_manager fluidd-config]
 type = git_repo
-path = ~/crowsnest
-origin = https://github.com/mainsail-crew/crowsnest.git
-managed_services = crowsnest
-install_script = tools/install.sh
+primary_branch = master
+path = ~/fluidd-config
+origin = https://github.com/fluidd-core/fluidd-config.git
+managed_services = klipper
 
 [update_manager sonar]
 type = git_repo
@@ -110,26 +109,19 @@ primary_branch = main
 managed_services = sonar
 install_script = tools/install.sh
 
-[update_manager fluidd-config]
+[update_manager crowsnest]
 type = git_repo
-primary_branch = master
-path = ~/fluidd-config
-origin = https://github.com/fluidd-core/fluidd-config.git
-managed_services = klipper
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/install.sh
 
-[update_manager fluidd]
-type = web
-channel = stable
-repo = fluidd-core/fluidd
-path = ~/fluidd
-
-[update_manager moonraker-telegram-bot]
+[update_manager timelapse]
 type = git_repo
-path = ~/moonraker-telegram-bot
-origin = https://github.com/nlef/moonraker-telegram-bot.git
-env = ~/moonraker-telegram-bot-env/bin/python
-requirements = scripts/requirements.txt
-install_script = scripts/install.sh
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
 
 [update_manager KlipperScreen]
 type = git_repo
@@ -139,4 +131,19 @@ env = ~/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
 managed_services = KlipperScreen
+
+[update_manager moonraker-telegram-bot]
+type = git_repo
+path = ~/moonraker-telegram-bot
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+env = ~/moonraker-telegram-bot-env/bin/python
+requirements = scripts/requirements.txt
+install_script = scripts/install.sh
+
+[update_manager voron-klipper-extensions]
+type = git_repo
+path = ~/voron-klipper-extensions
+origin = https://github.com/voidtrance/voron-klipper-extensions.git
+install_script = install-extensions.sh
+managed_services = klipper
 
