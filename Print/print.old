@@ -70,7 +70,7 @@ gcode:
 
   M117 Starting up
   BED_MESH_CLEAR
-  CLEAR_PAUSE
+  # Reset the G-Code Z offset (adjust Z offset if needed)
   SET_GCODE_OFFSET Z={Z_OFFSET}
   M220 S100 ;Reset Feedrate
   M221 S100 ;Reset Flowrate
@@ -276,7 +276,6 @@ gcode:
   # FANS_OFF
   ALL_OFF
   BED_MESH_CLEAR
-  CLEAR_PAUSE
   # SET_GCODE_OFFSET Z=0.00
   SET_GCODE_VARIABLE MACRO=LIGHT VARIABLE=disable_slicer value=0
   UPDATE_DELAYED_GCODE ID=CLEAR_DISPLAY DURATION=60
