@@ -72,7 +72,7 @@ subscriptions =
 	mainsail
 
 [update_manager]
-refresh_interval = 168
+refresh_interval = 24
 enable_auto_refresh = True
 
 [update_manager mainsail]
