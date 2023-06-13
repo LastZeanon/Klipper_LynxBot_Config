@@ -3,7 +3,8 @@ gcode:
     {% set N_POINTS = params.N_POINTS|default(3)|int %}
     AXIS_TWIST_COMPENSATION_CALIBRATE N_POINTS={N_POINTS}
 
-[gcode_macro BEGIN_TWIST_COMPENSATION_CALIBRATE]
+[gcode_macro AXIS_TWIST_COMPENSATION_CALIBRATE]
+rename_existing: AXIS_TWIST_COMPENSATION_CALIBRATE_BASE
 gcode:
     SET_GCODE_OFFSET Z=0.00
 
@@ -16,6 +17,10 @@ gcode:
     _CHECK_PROBE state=attached
 
     PROBE_BASE
+
+    AXIS_TWIST_COMPENSATION_CALIBRATE_BASE {% for p in params
+                %}{'%s=%s ' % (p, params[p])}{%
+               endfor %}
 
 [gcode_macro FINALIZE_TWIST_COMPENSATION_CALIBRATE]
 gcode:
