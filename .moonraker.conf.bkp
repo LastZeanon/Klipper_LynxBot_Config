@@ -69,7 +69,7 @@ locked_while_printing = True
 
 [announcements]
 subscriptions = 
-	octoeverywhere
+	mainsail
 
 [update_manager]
 refresh_interval = 24
@@ -152,15 +152,4 @@ type = git_repo
 path = ~/klipper-led_effect
 origin = https://github.com/Zeanon/klipper-led_effect.git
 is_system_service = False
-
-[update_manager octoeverywhere]
-type = git_repo
-channel = beta
-path = /home/pi/octoeverywhere
-origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
-env = /home/pi/octoeverywhere-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	octoeverywhere
 
