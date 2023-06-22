@@ -78,7 +78,7 @@ enable_auto_refresh = True
 [update_manager mainsail]
 type = web
 channel = stable
-repo = mainsail-crew/mainsail
+repo = Zeanon/mainsail
 path = ~/mainsail
 
 [update_manager mainsail-config]
