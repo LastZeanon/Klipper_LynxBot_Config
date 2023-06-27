@@ -6,11 +6,12 @@ This is a dark-mode theme vyper for mainsail
     --Primary:        #282a36;    /*Voron:Black*/
     --Secondary:      #ff5555;    /*Voron:Red*/
     --Dark_Red:       #B12F36;
+    --Main_Gray:     #6b6b6b;
     --Gray:           #2b2b2b;
     --Dark_Gray:      #1E1E1E;
     --Green:          #00FF00;
     --Blue:           #B12F36; 
-    --Red:            #ff5555;
+    --Red:            #B12F36;
     --Warnings:       #B12F36;
     --Text:           #f8f8f2;
     --DarkerText:     #f5f5f2;
@@ -32,9 +33,14 @@ This is a dark-mode theme vyper for mainsail
     border-color: var(--Dark_Red);
 }
 
+.v-application .highlight {
+    background-color: var(--Main_Gray) !important;
+    border-color: var(--Main_Gray);
+}
+
 .v-application .primary {
     background-color: var(--Gray) !important;
-    border-color: var(--Dark_Red) !important;
+    border-color: var(--Main_Gray) !important;
 }
 
 .v-application .success--text {
@@ -43,12 +49,28 @@ This is a dark-mode theme vyper for mainsail
 }
 
 .v-application .primary--text {
-    color: var(--Dark_Red) !important;
-    caret-color: var(--Dark_Red) !important;
+    color: var(--Main_Gray) !important;
+    caret-color: var(--Main_Gray) !important;
 }
 
 .v-application a {
-    color: var(--Dark_Red);
+    color: var(--Main_Gray);
+}
+
+.homed g.home_button {
+    fill: var(--Dark_Gray) !important;
+}
+
+g.home_button {
+    fill: var(--Main_Gray) !important;
+}
+
+a#stepper_off.primary {
+    fill: var(--Main_Gray) !important;
+}
+
+a#stepper_off.highlight {
+    fill: var(--Dark_Gray) !important;
 }
 
 .v-btn:not(.v-btn--outlined).accent, .v-btn:not(.v-btn--outlined).error, .v-btn:not(.v-btn--outlined).info, .v-btn:not(.v-btn--outlined).primary, .v-btn:not(.v-btn--outlined).secondary, .v-btn:not(.v-btn--outlined).success, .v-btn:not(.v-btn--outlined).warning {
@@ -56,21 +78,21 @@ This is a dark-mode theme vyper for mainsail
 }
 
 .v-application .text-body-2, .v-application .text-button {
-    color: var(--Dark_Red);
+    color: var(--Main_Gray);
 }
 
 .v-progress-circular__overlay .v-card__text {
-    stroke: var(--Dark_Red) !important;
+    stroke: var(--Main_Gray) !important;
 }
 
 .v-slider__track-fill.primary {
-    background-color: var(--Dark_Red) !important;
-    border-color: var(--Dark_Red) !important;
+    background-color: var(--Main_Gray) !important;
+    border-color: var(--Main_Gray) !important;
 }
 
 .v-slider__thumb.primary {
-    background-color: var(--Dark_Red) !important;
-    border-color: var(--Dark_Red) !important;
+    background-color: var(--Main_Gray) !important;
+    border-color: var(--Main_Gray) !important;
 }
 
 /*
