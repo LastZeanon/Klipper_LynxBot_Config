@@ -6,7 +6,8 @@ This is a dark-mode theme vyper for mainsail
     --Primary:        #282a36;    /*Voron:Black*/
     --Secondary:      #ff5555;    /*Voron:Red*/
     --Dark_Red:       #B12F36;
-    --Main_Gray:     #6b6b6b;
+    --Light_Gray:     #969696;
+    --Main_Gray:      #6b6b6b;
     --Gray:           #2b2b2b;
     --Dark_Gray:      #1E1E1E;
     --Green:          #00FF00;
@@ -61,8 +62,24 @@ This is a dark-mode theme vyper for mainsail
     fill: var(--Dark_Gray) !important;
 }
 
-g.home_button {
+svg a.disabled circle,
+svg a.disabled .home_button path {
+    fill: var(--Dark_Gray) !important;
+}
+
+svg .disabled a.step {
+    fill: var(--Dark_Gray) !important;
+}
+
+svg g#stepsX,
+svg g#stepsY,
+svg g#stepsZ {
+    fill: var(--Light_Gray) !important;
+}
+
+svg g.home_button {
     fill: var(--Main_Gray) !important;
+    transition: fill 750ms ease-out !important;
 }
 
 a#stepper_off.primary {
