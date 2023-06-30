@@ -20,6 +20,7 @@ This is a dark-mode theme vyper for mainsail
     --DarkBackground: #282a36;
     --Toolbars:       #44475a;
     --Sheets:         #282a36;   
+    --Black:          #000000;
 }
 
 #nav-header .v-toolbar__title {
@@ -56,6 +57,10 @@ This is a dark-mode theme vyper for mainsail
 
 .v-application a {
     color: var(--Main_Gray);
+}
+
+.v-progress-circular__overlay {
+    stroke: var(--Light_Gray) !important;
 }
 
 .homed g.home_button {
