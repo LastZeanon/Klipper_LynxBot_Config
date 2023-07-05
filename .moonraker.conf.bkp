@@ -1,11 +1,6 @@
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = True
+[announcements]
+subscriptions = 
+	mainsail
 
 [authorization]
 cors_domains = 
@@ -24,13 +19,12 @@ trusted_clients =
 	FE80::/10
 	::1/128
 
+[file_manager]
+enable_object_processing = True
+
 [octoprint_compat]
 
 [history]
-
-[timelapse]
-output_path = ~/timelapse/
-ffmpeg_binary_path = /usr/bin/ffmpeg
 
 [power STATUS_LIGHT]
 type = klipper_device
@@ -67,9 +61,15 @@ type = klipper_device
 object_name = gcode_macro LOCK_KLICKY_DOCKING
 locked_while_printing = True
 
-[announcements]
-subscriptions = 
-	mainsail
+[server]
+host = 0.0.0.0
+port = 7125
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
+
+[timelapse]
+output_path = ~/timelapse/
+ffmpeg_binary_path = /usr/bin/ffmpeg
 
 [update_manager]
 refresh_interval = 24
