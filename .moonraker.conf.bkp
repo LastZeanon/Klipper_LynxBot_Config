@@ -51,6 +51,16 @@ type = klipper_device
 object_name = gcode_macro LIGHT_SWITCH
 locked_while_printing = FALSE
 
+[power PRINT_BEEP]
+type = klipper_device
+object_name = gcode_macro PRINT_BEEP
+locked_while_printing = FALSE
+
+[power SHUTDOWN_AFTER_PRINT]
+type = klipper_device
+object_name = gcode_macro SHUTDOWN_AFTER_PRINT
+locked_while_printing = FALSE
+
 [power KLICKY_ATTACHING_LOCKED]
 type = klipper_device
 object_name = gcode_macro LOCK_KLICKY_ATTACHING
