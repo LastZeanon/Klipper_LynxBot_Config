@@ -2,20 +2,19 @@
 
 # min z value the bed should be at when attaching/docking the probe
 # if z is not homed, it will move the bed by the given amount
-variable_probe_z_hop: 20
+variable_probe_z_hop: 5
 
 # First position the toolhead should move to when approaching the dock(normally the same as position_after)
-variable_dock_position_first: 19.0, 212.0
+variable_dock_position_first: 20.5, 208.5
 
 # Second position the toolhead should move to when approaching the dock(normally right in front of the dock)
-variable_dock_position_second: -15.0, 212.0
+variable_dock_position_second: -12.0, 208.5
 
 # Position of the dock
-variable_dock_position_final: -15.0, 227.0
-# variable_dock_position_final: -12.0, 232.25
+variable_dock_position_final: -12.0, 232.25
 
 # Position the toolhead should move to after attaching/docking the probe
-variable_dock_position_after: 19.0, 212.0
+variable_dock_position_after: 20.5, 208.5
 
 # In which order should the axis move to attach the probe(y,x means the toolhead will first move the y axis, then the x axis)
 variable_attach_probe_order: "y,x"
