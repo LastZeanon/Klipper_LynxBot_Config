@@ -61,12 +61,12 @@ type = klipper_device
 object_name = gcode_macro SHUTDOWN_AFTER_PRINT
 locked_while_printing = FALSE
 
-[power KLICKY_ATTACHING_LOCKED]
+[power LOCK_KLICKY_ATTACHING]
 type = klipper_device
 object_name = gcode_macro LOCK_KLICKY_ATTACHING
 locked_while_printing = True
 
-[power KLICKY_DOCKING_LOCKED]
+[power LOCK_KLICKY_DOCKING]
 type = klipper_device
 object_name = gcode_macro LOCK_KLICKY_DOCKING
 locked_while_printing = True
