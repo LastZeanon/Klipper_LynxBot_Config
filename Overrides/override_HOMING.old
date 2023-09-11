@@ -273,4 +273,11 @@ gcode:
 [gcode_macro _MOVE_TO_Z_POSITION]
 gcode:
   G90
-  G0 X{printer['gcode_macro _HOMING_VARIABLES'].pos_z_home[0]} Y{printer['gcode_macro _HOMING_VARIABLES'].pos_z_home[1]} F2500
+  {% if printer.toolhead.position.x < printer['gcode_macro _HOMING_VARIABLES'].pos_final[0] %}
+    G0 X{printer['gcode_macro _HOMING_VARIABLES'].pos_1_left[0]} Y{printer['gcode_macro _HOMING_VARIABLES'].pos_1_left[1]} F5000
+    G0 X{printer['gcode_macro _HOMING_VARIABLES'].pos_2_left[0]} Y{printer['gcode_macro _HOMING_VARIABLES'].pos_2_left[1]} F2500
+  {% else %}
+    G0 X{printer['gcode_macro _HOMING_VARIABLES'].pos_1_right[0]} Y{printer['gcode_macro _HOMING_VARIABLES'].pos_1_right[1]} F5000
+    G0 X{printer['gcode_macro _HOMING_VARIABLES'].pos_2_right[0]} Y{printer['gcode_macro _HOMING_VARIABLES'].pos_2_right[1]} F2500
+  {% endif %}
+  G0 X{printer['gcode_macro _HOMING_VARIABLES'].pos_final[0]} Y{printer['gcode_macro _HOMING_VARIABLES'].pos_final[1]} F2500
