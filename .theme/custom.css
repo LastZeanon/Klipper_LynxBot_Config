@@ -73,6 +73,10 @@ This is a dark-mode theme vyper for mainsail
     fill: var(--Dark_Gray) !important;
 }
 
+.homed g.home_button {
+    fill: var(--Dark_Gray) !important;
+}
+
 svg a.disabled circle,
 svg a.disabled .home_button path {
     fill: var(--Dark_Gray) !important;
@@ -91,6 +95,19 @@ svg g#stepsZ {
 svg g.home_button {
     fill: var(--Main_Gray) !important;
     transition: fill 750ms ease-out !important;
+}
+
+
+a#tilt_adjust.primary {
+    fill: var(--Main_Gray) !important;
+}
+
+a#tilt_adjust.highlight {
+    fill: var(--Dark_Gray) !important;
+}
+
+svg a#tilt_adjust #tilt_icon {
+    stroke-width: 0 !important;
 }
 
 a#stepper_off.primary {

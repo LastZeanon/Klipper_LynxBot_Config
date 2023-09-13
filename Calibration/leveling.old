@@ -1,0 +1,556 @@
+[gcode_macro _LEVEL_INIT]
+gcode:
+  G28 X0 Y0 Z0
+  
+  G90
+  G0 Z{params.Z_OFFSET|default(1)|int + 5} F5000
+
+[gcode_macro _LEVEL_FINALIZE]
+gcode:
+  G90
+  G0 Z{params.Z_OFFSET|default(1)|float} F600
+
+  M300 V{params.VOLUME|default(1000)|int}
+
+
+[gcode_macro LEVEL_BED_00]
+description: Move the print head to the top right position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].max[0]} Y{printer["gcode_macro _LEVEL_VARIABLES"].max[1]} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+[gcode_macro LEVEL_BED_01]
+description: Move the print head to the top left position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].min[0]} Y{printer["gcode_macro _LEVEL_VARIABLES"].max[1]} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+[gcode_macro LEVEL_BED_10]
+description: Move the print head to the bottom left position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+  
+  _LEVEL_INIT Z_OFFSET={z_offset}
+
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].min[0]} Y{printer["gcode_macro _LEVEL_VARIABLES"].min[1]} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+[gcode_macro LEVEL_BED_11]
+description: Move the print head to the bottom right position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+  
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].max[0]} Y{printer["gcode_macro _LEVEL_VARIABLES"].min[1]} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+
+[gcode_macro LEVEL_BED_FINE_00]
+description: Move the print head to the top right position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].max[0] + 20.00} Y{printer["gcode_macro _LEVEL_VARIABLES"].max[1] + 20.00} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+[gcode_macro LEVEL_BED_FINE_01]
+description: Move the print head to the top left position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].min[0] - 20.00} Y{printer["gcode_macro _LEVEL_VARIABLES"].max[1] + 20.00} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+[gcode_macro LEVEL_BED_FINE_10]
+description: Move the print head to the bottom left position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+  
+  _LEVEL_INIT Z_OFFSET={z_offset}
+
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].min[0] - 20.00} Y{printer["gcode_macro _LEVEL_VARIABLES"].min[1] - 20.00} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+[gcode_macro LEVEL_BED_FINE_11]
+description: Move the print head to the bottom right position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+  
+  G90
+  G0 X{printer["gcode_macro _LEVEL_VARIABLES"].max[0] + 20.00} Y{printer["gcode_macro _LEVEL_VARIABLES"].min[1] - 20.00} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+
+[gcode_macro LEVEL_BED_MANUAL]
+description: Move the print head to a defined position for manual bed-leveling
+variable_front_end_hints: {
+  'params': {
+      'X': {
+        'type': 'float',
+        'min': -12,
+        'max': 239.5
+      },
+  
+      'Y': {
+        'type': 'float',
+        'min': -13,
+        'max': 232
+      },
+
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% if params.X is defined %}
+    {% set x = ('X' + params.X)  %}
+  {%else %}
+    {% set x = "" %}
+  {% endif %}
+
+  {% if params.Y is defined %}
+    {% set y = ('Y' + params.Y)  %}
+  {%else %}
+    {% set y = "" %}
+  {% endif %}
+
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  _LEVEL_INIT Z_OFFSET={z_offset}
+  
+  G90
+  G0 {x} {y} F5000
+
+  _LEVEL_FINALIZE VOLUME={volume} Z_OFFSET={z_offset}
+
+
+[gcode_macro LEVEL_ROUGH]
+description: Heat up the print bed to 60°, the extruder to 150°, home all unhomed axes, move to the next probing point for manual bed leveling
+variable_front_end_hints: {
+  'params': {
+      'BED_TEMP': {
+        'type': 'float',
+        'default': 60,
+        'min': 0,
+        'max': 120
+      },
+
+      'EXTR_TEMP': {
+        'type': 'float',
+        'default': 210,
+        'min': 0,
+        'max': 275
+      },
+
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+variable_level_pos: 0
+variable_leveling: False
+gcode:
+  {% set bed_temp = params.BED_TEMP|default(60)|int %}
+  {% set extr_temp = params.EXTR_TEMP|default(210)|int %}
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  SET_HEATER_TEMPERATURE HEATER=heater_bed TARGET={bed_temp}
+  SET_HEATER_TEMPERATURE HEATER=extruder TARGET={extr_temp}
+  {% if not printer["gcode_macro LEVEL_ROUGH"].leveling %}
+    G28
+  {% endif %}
+  # M106 S255
+  TEMPERATURE_WAIT SENSOR=heater_bed MINIMUM={bed_temp}
+  TEMPERATURE_WAIT SENSOR=extruder MINIMUM={extr_temp}
+
+  {% if not printer["gcode_macro LEVEL_ROUGH"].leveling %}
+    M300 V{volume} A3
+    BED_MESH_CLEAR
+    CENTER Z=200
+    SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=leveling VALUE={ True }
+  {% else %}
+    {% if printer["gcode_macro LEVEL_ROUGH"].level_pos == 0 %}
+      LEVEL_BED_00 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=level_pos VALUE=1
+      M117 Position 1
+    {% endif %}
+    
+    {% if printer["gcode_macro LEVEL_ROUGH"].level_pos == 1 %}
+      LEVEL_BED_01 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=level_pos VALUE=2
+      M117 Position 2
+    {% endif %}
+
+    {% if printer["gcode_macro LEVEL_ROUGH"].level_pos == 2 %}
+      LEVEL_BED_10 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=level_pos VALUE=3
+      M117 Position 3
+    {% endif %}
+
+    {% if printer["gcode_macro LEVEL_ROUGH"].level_pos == 3 %}
+      LEVEL_BED_11 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=level_pos VALUE=0
+      M117 Position 4
+    {% endif %}
+  {% endif %}
+
+
+[gcode_macro LEVEL_FINE]
+description: Heat up the print bed to 60°, the extruder to 150°, home all unhomed axes, move to the next probing point for manual bed leveling
+variable_front_end_hints: {
+  'params': {
+      'BED_TEMP': {
+        'type': 'float',
+        'default': 60,
+        'min': 0,
+        'max': 120
+      },
+
+      'EXTR_TEMP': {
+        'type': 'float',
+        'default': 210,
+        'min': 0,
+        'max': 275
+      },
+
+      'Z_OFFSET': {
+        'type': 'float',
+        'default': 1
+      },
+
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+variable_level_pos: 0
+gcode:
+  {% set bed_temp = params.BED_TEMP|default(60)|int %}
+  {% set extr_temp = params.EXTR_TEMP|default(210)|int %}
+  {% set z_offset = params.Z_OFFSET|default(1)|float %}
+  {% set volume = params.VOLUME|default(1000)|int %}
+
+  SET_HEATER_TEMPERATURE HEATER=heater_bed TARGET={bed_temp}
+  SET_HEATER_TEMPERATURE HEATER=extruder TARGET={extr_temp}
+  {% if not printer["gcode_macro LEVEL_ROUGH"].leveling %}
+    G28
+  {% endif %}
+  TEMPERATURE_WAIT SENSOR=heater_bed MINIMUM={bed_temp}
+  TEMPERATURE_WAIT SENSOR=extruder MINIMUM={extr_temp}
+
+  {% if not printer["gcode_macro LEVEL_ROUGH"].leveling %}
+    M300 V{volume} A3
+    BED_MESH_CLEAR
+    CENTER Z=200
+    SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=leveling VALUE={ True }
+  {% else %}
+    {% if printer["gcode_macro LEVEL_FINE"].level_pos == 0 %}
+      LEVEL_BED_FINE_00 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_FINE VARIABLE=level_pos VALUE=1
+      M117 Fine Tune 1
+    {% endif %}
+    
+    {% if printer["gcode_macro LEVEL_FINE"].level_pos == 1 %}
+      LEVEL_BED_FINE_01 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_FINE VARIABLE=level_pos VALUE=2
+      M117 Fine Tune 2
+    {% endif %}
+
+    {% if printer["gcode_macro LEVEL_FINE"].level_pos == 2 %}
+      LEVEL_BED_FINE_10 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_FINE VARIABLE=level_pos VALUE=3
+      M117 Fine Tune 3
+    {% endif %}
+
+    {% if printer["gcode_macro LEVEL_FINE"].level_pos == 3 %}
+      LEVEL_BED_FINE_11 VOLUME={volume} Z_OFFSET={z_offset}
+      SET_GCODE_VARIABLE MACRO=LEVEL_FINE VARIABLE=level_pos VALUE=0
+      M117 Fine Tune 4
+    {% endif %}
+  {% endif %}
+
+
+[gcode_macro LEVEL_FINALIZE]
+description: Cool the print bed and park the print head
+variable_front_end_hints: {
+  'params': {
+      'VOLUME': {
+        'type': 'int',
+        'default': '1000',
+        'min': '0',
+        'max': 4000
+      }
+    }
+  }
+gcode:
+  {% set VOLUME = params.VOLUME|default(0)|int %}
+
+  HEATERS_OFF
+  PARK VOLUME={VOLUME}
+  
+  SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=leveling VALUE={ False }
+
+  SET_GCODE_VARIABLE MACRO=LEVEL_ROUGH VARIABLE=level_pos VALUE=0
+  SET_GCODE_VARIABLE MACRO=LEVEL_FINE VARIABLE=level_pos VALUE=0
+
+  BED_MESH_CLEAR
+
+  M117 Leveling Done
+  G4 P5000
+  M117 Ready
+
+
+[gcode_macro LEVEL_AUTO]
+variable_front_end_hints: {
+  'params': {
+      'PROFILE': {
+        'type': 'string'
+      },
+
+      'BED_TEMP': {
+        'type': 'float',
+        'default': 60,
+        'min': 0,
+        'max': 120
+      },
+
+      'SOAK_TIME': {
+        'type': 'int',
+        'default': 120,
+        'min': 0,
+        'max': 7200
+      }
+    }
+  }
+gcode:
+  {% if params.PROFILE is defined %}
+    {% set PROFILE = params.PROFILE %}
+  {% endif %}
+  {% set BED_TEMP = params.TEMP|default(60)|int %}
+  {% set SOAK_TIME = params.SOAK_TIME|default(120)|int %}
+
+  LOOKUP_PID_PROFILE BED_TEMP={BED_TEMP} VERBOSE=none
+
+  {% if printer['gcode_macro STATUS_LIGHT'].value|int != 0 %}
+    {% set BASE_TEMP = printer.heater_bed.temperature %}
+    SET_LED_TEMPLATE LED=Toolhead TEMPLATE=bed_heat INDEX=2 param_target_temp={BED_TEMP} param_base_temp={BASE_TEMP}
+  {% endif %}
+
+  SET_HEATER_TEMPERATURE HEATER=heater_bed TARGET={BED_TEMP}
+
+  M117 Heating up
+  RESPOND MSG="Heating up" COLOR=warning
+
+  TEMPERATURE_WAIT SENSOR=heater_bed MINIMUM={BED_TEMP} MAXIMUM={BED_TEMP + 1}
+
+  {% if BED_TEMP > 0 %}
+    {% for i in range(SOAK_TIME) %}
+      {% set remaining = SOAK_TIME - i %}
+      M117 Soaking: {"%02d:%02d" % (remaining // 60, remaining % 60)}
+      G4 P1000
+    {% endfor %}
+  {% endif %}
+
+  {% if printer['gcode_macro STATUS_LIGHT'].value|int != 0 %}
+    SET_LED_TEMPLATE LED=Toolhead TEMPLATE="" INDEX=2
+    STATUS_LIGHT value=1
+  {% endif %}
+
+  M117 Leveling
+  RESPOND MSG="Leveling" COLOR=warning
+
+  BED_MESH_CALIBRATE {rawparams}
+
+  PID_PROFILE LOAD=default HEATER=heater_bed DEFAULT=default VERBOSE=none
+
+  PARK
+  M84
+  M300 A3
+  G4 P1000
+  
+  SAVE_CONFIG
+
+[gcode_macro G29]
+gcode:
+  BED_MESH_CALIBRATE {rawparams}
