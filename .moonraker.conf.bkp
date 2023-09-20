@@ -41,9 +41,9 @@ type = klipper_device
 object_name = gcode_macro LED_BARS
 locked_while_printing = FALSE
 
-[power LIGHT]
+[power _LIGHT]
 type = klipper_device
-object_name = gcode_macro LIGHT
+object_name = gcode_macro _LIGHT
 locked_while_printing = FALSE
 
 [power LIGHT_SWITCH]
