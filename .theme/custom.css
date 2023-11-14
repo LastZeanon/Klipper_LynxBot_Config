@@ -48,7 +48,7 @@ This is a dark-mode theme vyper for mainsail
 
 .v-application .primary {
     background-color: var(--Gray) !important;
-    border-color: var(--Main_Gray) !important;
+    border-color: var(--Gray) !important;
 }
 
 .v-application .success--text {
