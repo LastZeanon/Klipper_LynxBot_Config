@@ -22,6 +22,9 @@ trusted_clients =
 [file_manager]
 enable_object_processing = True
 
+[machine]
+sudo_password = raspberry
+
 [octoprint_compat]
 
 [history]
@@ -79,6 +82,7 @@ klippy_uds_address = ~/printer_data/comms/klippy.sock
 
 [timelapse]
 output_path = ~/timelapse/
+frame_path = /tmp/timelapse/
 ffmpeg_binary_path = /usr/bin/ffmpeg
 
 [update_manager]
