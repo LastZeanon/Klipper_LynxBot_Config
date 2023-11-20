@@ -185,3 +185,12 @@ managed_services = klipper
 primary_branch = main
 install_script = install.sh
 
+[update_manager intelligent_default_mesh]
+type = git_repo
+channel = dev
+path = ~/intelligent_default_mesh
+origin = https://github.com/LynxCrew/Intelligent_Default_Mesh.git
+managed_services = klipper
+primary_branch = main
+install_script = install.sh
+
