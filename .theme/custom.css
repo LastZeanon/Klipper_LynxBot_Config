@@ -7,6 +7,7 @@ This is a dark-mode theme vyper for mainsail
     --Secondary:      #ff5555;    /*Voron:Red*/
     --Dark_Red:       #B12F36;
     --Orange:         #FFA500;
+    --Dark_Orange:    #FF8300;
     --Light_Gray:     #969696;
     --Main_Gray:      #6b6b6b;
     --Gray:           #2b2b2b;
@@ -31,6 +32,16 @@ This is a dark-mode theme vyper for mainsail
     font-family: monospace;
 }
 
+.v-application .primary {
+    background-color: var(--Gray) !important;
+    border-color: var(--Gray) !important;
+}
+
+.v-application .succcess {
+    background-color: var(--Green) !important;
+    border-color: var(--Green) !important;
+}
+
 .v-application .warning {
     background-color: var(--Orange) !important;
     border-color: var(--Orange);
@@ -46,9 +57,15 @@ This is a dark-mode theme vyper for mainsail
     border-color: var(--Main_Gray);
 }
 
-.v-application .primary {
-    background-color: var(--Gray) !important;
-    border-color: var(--Gray) !important;
+.v-application .attention {
+    background-color: var(--Dark_Orange) !important;
+    border-color: var(--Dark_Orange);
+}
+
+
+.v-application .primary--text {
+    color: var(--Main_Gray) !important;
+    caret-color: var(--Main_Gray) !important;
 }
 
 .v-application .success--text {
@@ -56,9 +73,24 @@ This is a dark-mode theme vyper for mainsail
     caret-color: var(--Green) !important;
 }
 
-.v-application .primary--text {
+/*.v-application .warning--text {
+    color: var(--Orange) !important;
+    caret-color: var(--Orange) !important;
+}
+
+.v-application .error--text {
+    color: var(--Dark_Red) !important;
+    caret-color: var(--Dark_Red) !important;
+}*/
+
+.v-application .highlight--text {
     color: var(--Main_Gray) !important;
     caret-color: var(--Main_Gray) !important;
+}
+
+.v-application .attention--text {
+    color: var(--Dark_Orange) !important;
+    caret-color: var(--Dark_Orange) !important;
 }
 
 .v-application a {
