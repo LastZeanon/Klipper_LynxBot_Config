@@ -7,6 +7,7 @@
 [include ./override_PROBE_CALIBRATE.cfg]
 [include ./override_PROBE.cfg]
 [include ./override_RESPOND.cfg]
+[include ./override_SET_GCODE_OFFSET.cfg]
 [include ./override_SET_LED_TEMPLATE.cfg]
 [include ./override_SET_LED.cfg]
 [include ./override_SET_PIN.cfg]
