@@ -10,34 +10,34 @@ shutdown_speed: 0.0
 # [fan_generic Aux_Fan]
 # pin: PD15
 
-[heater_fan Hotend_Fan]
+[fan_generic Hotend_Fan]
 pin: PD12
 tachometer_pin: ^PB7
-heater: extruder
-heater_temp: 50.0
+# heater: extruder
+# heater_temp: 50.0
 min_power: 0.0
 max_power: 1.0
-fan_speed: 0.70
+# fan_speed: 0.70
 cycle_time: 0.00001
 hardware_pwm: False
 tachometer_ppr: 2
-min_rpm: 3000 #100
+# min_rpm: 3000 #100
 kick_start_time: 0.5
 shutdown_speed: 1.0
 
-[controller_fan Sherpa]
+[fan_generic Sherpa]
 pin: PE5
-fan_speed: 1.0
+# fan_speed: 1.0
 min_power: 0.2
 max_power: 1.0
 cycle_time: 0.01
 hardware_pwm: False
-idle_timeout: 120
+# idle_timeout: 120
 kick_start_time: 0.5
 shutdown_speed: 1.0
-heater:
-stepper:
-  extruder
+# heater:
+# stepper:
+#   extruder
 
 [controller_temperature_fan Electronics_Bay]
 pin: PA8
@@ -57,7 +57,7 @@ stepper:
 min_power: 0.2
 max_power: 1.0
 cycle_time: 0.01
-hardware_pwm: False
+hardware_pwm: false
 kick_start_time: 0.5
 shutdown_speed: 1.0
 
@@ -80,3 +80,17 @@ point3: 60.0, 1.0
 smooth_readings: 100
 cooling_hysteresis: 5.0
 heating_hysteresis: 0.0
+
+[gcode_macro TEST_RESONANCES]
+rename_existing: TEST_RESONANCES_BASE
+gcode:
+  SET_FAN_SPEED FAN=Hotend_Fan SPEED=0.7
+  SET_FAN_SPEED FAN=Sherpa SPEED=1.0
+  TEST_RESONANCES_BASE {rawparams}
+
+[gcode_macro SHAPER_CALIBRATE]
+rename_existing: SHAPER_CALIBRATE_BASE
+gcode:
+  SET_FAN_SPEED FAN=Hotend_Fan SPEED=0.7
+  SET_FAN_SPEED FAN=Sherpa SPEED=1.0
+  SHAPER_CALIBRATE_BASE {rawparams}
