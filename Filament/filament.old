@@ -146,12 +146,63 @@ gcode:
 
 
 [gcode_macro CHANGE_FILAMENT]
+variable_front_end_hints: {
+    'params': {
+      'X': {
+        'type': 'float',
+        'min': -12,
+        'max': 239.5
+      },
+    
+      'Y': {
+        'type': 'float',
+        'min': -13,
+        'max': 232
+      },
+    
+      'Z': {
+        'type': 'float',
+        'min': 0,
+        'max': 300
+      },
+  
+      'E': {
+        'type': 'float',
+        'default': 50,
+        'min': 0,
+        'max': 500
+      },
+  
+      'T': {
+        'type': 'float',
+        'default': 210,
+        'min': 0,
+        'max': 275
+      }
+    }
+  }
 gcode:
-  PAUSE HOTEND_OFF=FALSE
+  {% set X = params.X|default(printer["gcode_macro _PARK_VARIABLES"].park_pos[0])|float %}
+  {% set Y = params.Y|default(printer["gcode_macro _PARK_VARIABLES"].park_pos[1])|float %}
+  {% set Z = params.Z|default(printer["gcode_macro _PARK_VARIABLES"].park_pos[2])|float %}
+  {% set E = params.E|default(50)|float %}
+  {% set E = E * -1 %}
+  {% set T = params.T|default(210)|int %}
+  SAVE_GCODE_STATE NAME=M600_STATE
+  PAUSE
+  G91
+  G1 E-.8 F2700
+  G0 Z{Z}
+  G90
+  G0 X{X} Y{Y} F3000
+  G91
+  G1 E{E} F1000
+  RESTORE_GCODE_STATE NAME=M600_STATE
 
 [gcode_macro M600]
+description: Pause the ongoing print to change filament while printing
 gcode:
-  PAUSE HOTEND_OFF=FALSE
+  CHANGE_FILAMENT {% for p in params%}{'%s=%s ' % (p, params[p])}{% endfor %}
 
 
 [gcode_macro REMOVE_FILAMENT]
