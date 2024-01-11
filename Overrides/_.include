@@ -11,5 +11,4 @@
 [include ./override_SET_LED_TEMPLATE.cfg]
 [include ./override_SET_LED.cfg]
 [include ./override_SET_PIN.cfg]
-[include ./override_Z_ENDSTOP_CALIBRATE.cfg]
 [include ./override_Z_TILT_ADJUST.cfg]
