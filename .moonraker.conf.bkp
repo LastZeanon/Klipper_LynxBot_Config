@@ -162,7 +162,7 @@ install_script = scripts/install.sh
 [update_manager voron-klipper-extensions]
 type = git_repo
 path = ~/voron-klipper-extensions
-origin = https://github.com/voidtrance/voron-klipper-extensions.git
+origin = https://github.com/LynxCrew/voron-klipper-extensions.git
 install_script = install-extensions.sh
 managed_services = klipper
 
@@ -201,7 +201,7 @@ install_script = install.sh
 
 [update_manager Klippain-ShakeTune]
 type = git_repo
-origin = https://github.com/Frix-x/klippain-shaketune.git
+origin = https://github.com/LynxCrew/klippain-shaketune.git
 path = ~/klippain_shaketune
 virtualenv = ~/klippain_shaketune-env
 requirements = requirements.txt
