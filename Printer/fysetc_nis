@@ -6,10 +6,12 @@ cs_pin: NIS:PA4
 spi_software_sclk_pin: NIS:PA5
 spi_software_mosi_pin: NIS:PA7
 spi_software_miso_pin: NIS:PA6
-axes_map: -x, y, -z # Nozzle Mount
+# axes_map: -x, y, -z # Nozzle Mount
 
 [resonance_tester]
 accel_chip: adxl345
 # max_smoothing: 0.05
+# accel_per_hz: 150
+# max_freq: 175
 probe_points:
     125.00, 125.00, 50
