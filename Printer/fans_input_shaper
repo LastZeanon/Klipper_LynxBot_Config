@@ -8,9 +8,6 @@ min_power: 0.2
 max_power: 1.0
 shutdown_speed: 0.0
 
-# [fan_generic Aux_Fan]
-# pin: PD15
-
 [fan_generic Hotend_Fan]
 pin: PD12
 tachometer_pin: ^PB7
@@ -18,12 +15,13 @@ tachometer_pin: ^PB7
 # heater_temp: 50.0
 min_power: 0.0
 max_power: 1.0
-# fan_speed: 0.70
+# fan_speed: 1.0
 cycle_time: 0.00001
 hardware_pwm: False
 tachometer_ppr: 2
-tachometer_poll_interval: 0.001
-# min_rpm: 3000 #100
+tachometer_poll_interval: 0.0001
+# min_rpm: 12500 #100
+# max_error: 5
 kick_start_time: 0.5
 shutdown_speed: 1.0
 
