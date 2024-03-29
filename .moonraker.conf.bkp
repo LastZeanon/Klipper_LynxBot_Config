@@ -178,7 +178,7 @@ install_script = install.sh
 [update_manager led_effect]
 type = git_repo
 path = ~/klipper-led_effect
-origin = https://github.com/LynxCrew/klipper-led_effect.git
+origin = https://github.com/Zeanon/klipper-led_effect.git
 is_system_service = False
 
 [update_manager klicky]
