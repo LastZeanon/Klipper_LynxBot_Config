@@ -15,3 +15,5 @@
 [include ./override_SET_PIN.cfg]
 [include ./override_TEMPERATURE_WAIT.cfg]
 [include ./override_Z_TILT_ADJUST.cfg]
+[include ./override_Z_TILT_AUTODETECT.cfg]
+[include ./override_Z_TILT_CALIBRATE.cfg]
