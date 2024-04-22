@@ -1,0 +1,23 @@
+[beacon]
+serial:
+speed: 5.
+lift_speed: 5.
+backlash_comp: 0.5
+x_offset: 0.
+y_offset: 0.
+trigger_distance: 2.
+trigger_dive_threshold: 1.
+trigger_hysteresis: 0.006
+cal_nozzle_z: 0.1
+cal_floor: 0.2
+cal_ceil: 5.
+cal_speed: 5.
+cal_move_speed: 100.
+default_model_name: default
+mesh_main_direction: x
+#mesh_overscan: -1
+mesh_runs: 2
+mesh_cluster_size: 1
+zero_reference_cluster_size: 1.
+accel_scale: 16g
+accel_axes_map: x, y, z
