@@ -179,7 +179,7 @@ install_script = install.sh
 type = git_repo
 channel = dev
 path = ~/klipper-led_effect
-origin = https://github.com/Zeanon/klipper-led_effect.git
+origin = https://github.com/LynxCrew/klipper-led_effect.git
 is_system_service = False
 
 [update_manager klicky]
@@ -195,7 +195,7 @@ install_script = install.sh
 type = git_repo
 channel = dev
 path = ~/beacon_klipper
-origin = https://github.com/beacon3d/beacon_klipper.git
+origin = https://github.com/LynxCrew/beacon_klipper.git
 env = ~/klippy-env/bin/python
 requirements = requirements.txt
 install_script = install.sh
@@ -213,6 +213,15 @@ managed_services = klipper
 primary_branch = master
 install_script = install.sh
 
+[update_manager intelligent_beacon_model]
+type = git_repo
+channel = dev
+path = ~/intelligent_beacon_model
+origin = https://github.com/LynxCrew/Intelligent_Beacon_Model.git
+managed_services = klipper
+primary_branch = master
+install_script = install.sh
+
 [update_manager Klippain-ShakeTune]
 type = git_repo
 origin = https://github.com/LynxCrew/klippain-shaketune.git
@@ -220,6 +229,13 @@ path = ~/klippain_shaketune
 virtualenv = ~/klippain_shaketune-env
 requirements = requirements.txt
 system_dependencies = system-dependencies.json
+primary_branch = main
+managed_services = klipper
+
+[update_manager chopper-resonance-tuner]
+type = git_repo
+path = ~/chopper-resonance-tuner/
+origin = https://github.com/MRX8024/chopper-resonance-tuner.git
 primary_branch = main
 managed_services = klipper
 
