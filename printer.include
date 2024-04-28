@@ -1,2 +1,3 @@
 [include **/_.include]
 [include timelapse.cfg]
+[include chopper_tune.cfg]
