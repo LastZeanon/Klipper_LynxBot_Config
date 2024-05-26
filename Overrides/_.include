@@ -1,5 +1,6 @@
 [include ./override_BEACON_AUTO_CALIBRATE.cfg]
 [include ./override_BEACON_CALIBRATE.cfg]
+[include ./override_BEACON_ESTIMATE_BACKLASH.cfg]
 [include ./override_BEACON_MODEL_SELECT.cfg]
 [include ./override_BED_MESH_CALIBRATE.cfg]
 [include ./override_BED_MESH_PROFILE.cfg]
