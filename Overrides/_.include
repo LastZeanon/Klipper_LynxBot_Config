@@ -9,7 +9,7 @@
 [include ./override_M109.cfg]
 [include ./override_M190.cfg]
 [include ./override_M73.cfg]
-# [include ./override_PROBE_ACCURACY.cfg]
+[include ./override_PROBE_ACCURACY.cfg]
 # [include ./override_PROBE_CALIBRATE.cfg]
 # [include ./override_PROBE.cfg]
 [include ./override_RESPOND.cfg]
