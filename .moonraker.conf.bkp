@@ -70,11 +70,6 @@ port = 7125
 max_upload_size = 1024
 klippy_uds_address = ~/printer_data/comms/klippy.sock
 
-[spoolman]
-server = http://localhost:9449
-website = https://spool.lynxcrew.org
-sync_rate = 5
-
 [timelapse]
 output_path = ~/timelapse/
 frame_path = /tmp/timelapse/
@@ -82,7 +77,7 @@ ffmpeg_binary_path = /usr/bin/ffmpeg
 
 [update_manager]
 refresh_interval = 24
-enable_auto_refresh = True
+enable_auto_refresh = False
 
 [update_manager mainsail]
 type = web
