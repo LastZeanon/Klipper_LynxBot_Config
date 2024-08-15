@@ -38,10 +38,6 @@ end_gcode:
 
   SAVE_CONFIG
 
-[gcode_macro test]
-gcode:
-  RESPOND MSG="{printer["manual_probe"].is_active}"
-
 
 [gcode_macro TWIST_COMPENSATION_CALIBRATE]
 variable_front_end_hints: {
