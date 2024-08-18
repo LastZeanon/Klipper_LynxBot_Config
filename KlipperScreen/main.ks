@@ -1,6 +1,11 @@
+[main]
+job_complete_timeout: 300
+use_default_menu: False
+use_default_move_menu: False
+
 [printer LynxBot]
 camera_url: http://127.0.0.1/webcam/?action=stream
-titlebar_items: Raspberry_Pi, Electronics_Bay #, Arduino_Uno
+titlebar_items: Raspberry_Pi, Electronics_Bay, Beacon_MCU
 titlebar_name_type: short
 z_calibrate_panel: zcalibrate_lynxbot
 extrude_panel: extrude_lynxbot

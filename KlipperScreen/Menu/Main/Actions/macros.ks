@@ -90,89 +90,27 @@ params: {"script":"CENTER"}
 
 
 
-[menu __main Actions Macros Klicky]
-name: Klicky
-icon: custom-script
-
-[menu __main Actions Macros Klicky Attach_Probe]
-name: Attach Probe
-icon: arrow-right
-method: printer.gcode.script
-params: {"script":"ATTACH_PROBE"}
-
-[menu __main Actions Macros Klicky Dock_Probe]
-name: Dock Probe
-icon: arrow-left
-method: printer.gcode.script
-params: {"script":"DOCK_PROBE"}
-
-[menu __main Actions Macros Klicky Unlock]
-name: Unlock
-icon: custom-script
-
-[menu __main Actions Macros Klicky Unlock Probe]
-name: Probe
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"UNLOCK_PROBE"}
-
-[menu __main Actions Macros Klicky Unlock Attaching]
-name: Attaching
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"UNLOCK_ATTACHING"}
-
-[menu __main Actions Macros Klicky Unlock Docking]
-name: Docking
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"UNLOCK_DOCKING"}
-
-[menu __main Actions Macros Klicky Lock]
-name: Lock
-icon: custom-script
-
-[menu __main Actions Macros Klicky Lock Probe]
-name: Probe
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"LOCK_PROBE"}
-
-[menu __main Actions Macros Klicky Lock Attaching]
-name: Attaching
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"LOCK_ATTACHING"}
-
-[menu __main Actions Macros Klicky Lock Docking]
-name: Docking
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"LOCK_DOCKING"}
-
-[menu __main Actions Macros Klicky Reset_States]
-name: Reset States
-icon: custom-script
-method: printer.gcode.script
-params: {"script":"KLICKY_RESET_STATES"}
-
-
-
-[menu __main Actions Macros Probe]
+[menu __main Actions Macros Beacon]
 name: Probe
 icon: custom-script
 
-[menu __main Actions Macros Probe Calibrate]
+[menu __main Actions Macros Beacon Calibrate]
 name: Calibrate
 icon: custom-script
 method: printer.gcode.script
-params: {"script":"PROBE_CALIBRATE"}
+params: {"script":"CALIBRATE_BEACON"}
 
-[menu __main Actions Macros Probe Probe]
-name: Probe
+[menu __main Actions Macros Beacon AutoCalibrate]
+name: Auto-Calibrate
 icon: custom-script
 method: printer.gcode.script
-params: {"script":"PROBE"}
+params: {"script":"AUTO_CALIBRATE_BEACON"}
+
+[menu __main Actions Macros Beacon EstimateBacklash]
+name: Estimate Backlash
+icon: custom-script
+method: printer.gcode.script
+params: {"script":"BEACON_ESTIMATE_BACKLASH"}
 
 
 

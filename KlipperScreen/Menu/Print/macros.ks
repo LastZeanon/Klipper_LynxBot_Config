@@ -4,10 +4,6 @@ name: Utility
 icon: custom-script
 enable: {{ (printer.pause_resume.is_paused == True) }}
 
-[menu __print Macros Klicky]
-name: Klicky
-icon: custom-script
-
 [menu __print Macros Backup]
 name: Backup
 icon: sd
@@ -15,6 +11,11 @@ icon: sd
 [menu __print Macros Filament]
 name: Filament
 icon: filament
+
+[menu __print Macros Extrude]
+name: Extrude
+icon: extrude
+panel: extrude_lynxbot
 
 [menu __print Macros Shutdown_After_Print]
 name: Shutdown After Print
