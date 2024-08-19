@@ -1,4 +1,3 @@
-# Main>Actions # 
 [menu __main Actions Filament]
 name: Filament
 icon: filament

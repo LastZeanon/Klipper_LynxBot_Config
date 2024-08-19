@@ -1,4 +1,3 @@
-# Main>Actions>Configuration #
 [menu __main Configuration Z_Calibrate]
 name: Z Calibrate
 icon: z-farther

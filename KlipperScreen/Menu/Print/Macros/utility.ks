@@ -1,4 +1,3 @@
-# Print>Macros>Utility #
 [menu __print Macros Utility Fans_off]
 name: Fans Off
 icon: fan

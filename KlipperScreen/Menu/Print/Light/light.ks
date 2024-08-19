@@ -1,58 +1,34 @@
-[menu __main Actions Light Nozzle]
-name: Nozzle
-icon: filament
-
-[menu __main Actions Light LED_Bars]
-name: LED-Bars
-icon: light
-panel: lighting_lynxbot
-
-[menu __main Actions Light Status]
-name: Status
-icon: light
-
-[menu __main Actions Light Lightswitch]
-name: Lightswitch
-icon: light
-
-
-
-[menu __main Actions Light Nozzle ON]
+[menu __print Light Nozzle ON]
 name: ON
 icon: light
 method: printer.gcode.script
 params: {"script":"NOZZLE_LIGHT value=1"}
 
-[menu __main Actions Light Nozzle OFF]
+[menu __print Light Nozzle OFF]
 name: OFF
 icon: cancel
 method: printer.gcode.script
 params: {"script":"NOZZLE_LIGHT value=0"}
 
-
-
-[menu __main Actions Light Status ON]
+[menu __print Light Status ON]
 name: ON
 icon: light
 method: printer.gcode.script
 params: {"script":"STATUS_LIGHT value=1"}
 
-[menu __main Actions Light Status OFF]
+[menu __print Light Status OFF]
 name: OFF
 icon: cancel
 method: printer.gcode.script
 params: {"script":"STATUS_LIGHT value=0"}
 
-
-
-[menu __main Actions Light Lightswitch ENABLE]
+[menu __print Light Lightswitch ENABLE]
 name: ENABLE
 icon: light
 method: printer.gcode.script
 params: {"script":"LIGHT_SWITCH value=1"}
 
-
-[menu __main Actions Light Lightswitch DISABLE]
+[menu __print Light Lightswitch DISABLE]
 name: DISABLE
 icon: cancel
 method: printer.gcode.script

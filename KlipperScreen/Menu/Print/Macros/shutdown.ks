@@ -1,4 +1,3 @@
-# Print>Macros>ShutdownAfterPrint #
 [menu __print Macros Shutdown_After_Print ENABLE]
 name: ENABLE
 icon: complete

@@ -1,4 +1,3 @@
-# Main>Actions>Macros #
 [menu __main Actions Macros Bed-Mesh]
 name: Bed Mesh
 icon: bed-mesh

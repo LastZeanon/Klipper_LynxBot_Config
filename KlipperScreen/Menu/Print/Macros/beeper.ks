@@ -1,4 +1,3 @@
-# Print>Macros>Beeper #
 [menu __print Macros Beeper Enable]
 name: Enable
 icon: complete
