@@ -90,7 +90,7 @@ params: {"script":"CENTER"}
 
 
 [menu __main Actions Macros Beacon]
-name: Probe
+name: Beacon
 icon: custom-script
 
 [menu __main Actions Macros Beacon Calibrate]
