@@ -7,6 +7,12 @@ icon: bed-mesh
 name: Set Default Mesh
 icon: bed-mesh
 
+[menu __main Actions Macros Bed-Mesh Set_Default_Mesh GET_DEFAULT_MESH]
+name: Get Default Mesh
+icon: bed-mesh
+method: printer.gcode.script
+params: {"script":"_GET_DEFAULT_MESH_KS"}
+
 [menu __main Actions Macros Bed-Mesh Set_Default_Mesh TEXTURED_BLACK]
 name: Textured Black
 icon: bed-mesh
@@ -65,6 +71,12 @@ params: {"script":"SET_DEFAULT_MESH_NEUTRAL"}
 [menu __main Actions Macros Bed-Mesh Set_Default_Beacon_Model]
 name: Set Default Beacon Model
 icon: bed-mesh
+
+[menu __main Actions Macros Bed-Mesh Set_Default_Beacon_Model GET_DEFAULT_BEACON_MODEL]
+name: Get Default Beacon Model
+icon: bed-mesh
+method: printer.gcode.script
+params: {"script":"_GET_DEFAULT_BEACON_MODEL_KS"}
 
 [menu __main Actions Macros Bed-Mesh Set_Default_Beacon_Model TEXTURED_BLACK]
 name: Textured Black
