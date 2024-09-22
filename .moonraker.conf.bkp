@@ -201,6 +201,11 @@ type = klipper_device
 object_name = gcode_macro SHUTDOWN_AFTER_PRINT
 locked_while_printing = FALSE
 
+[power UNLOAD_AFTER_PRINT]
+type = klipper_device
+object_name = gcode_macro UNLOAD_AFTER_PRINT
+locked_while_printing = FALSE
+
 [server]
 host = 0.0.0.0
 port = 7125
