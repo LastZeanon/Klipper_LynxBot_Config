@@ -44,22 +44,27 @@ This is a dark-mode theme vyper for mainsail
 
 .v-application .warning {
     background-color: var(--Orange) !important;
-    border-color: var(--Orange);
+    border-color: var(--Orange) !important;
 }
 
 .v-application .error {
     background-color: var(--Dark_Red) !important;
-    border-color: var(--Dark_Red);
+    border-color: var(--Dark_Red) !important;
 }
 
 .v-application .highlight {
     background-color: var(--Main_Gray) !important;
-    border-color: var(--Main_Gray);
+    border-color: var(--Main_Gray) !important;
 }
 
 .v-application .attention {
     background-color: var(--Dark_Orange) !important;
-    border-color: var(--Dark_Orange);
+    border-color: var(--Dark_Orange) !important;
+}
+
+.v-application .red {
+    background-color: var(--Dark_Red) !important;
+    border-color: var(--Dark_Red) !important;
 }
 
 
