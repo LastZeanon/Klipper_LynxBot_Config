@@ -11,5 +11,5 @@ z_calibrate_panel: zcalibrate_lynxbot
 extrude_panel: extrude_lynxbot
 extrude_speeds: 1, 2, 5, 20
 extrude_distances: 1, 5, 10, 20
-lighting_output_pins: LED-Bars: 0.8
+lighting_output_pins: LED-Bars: 1.0
 enable_home_full: True
