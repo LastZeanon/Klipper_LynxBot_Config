@@ -226,6 +226,42 @@ params: {"script":"ENABLE_BEEPER value=0"}
 
 
 
+[menu __main Actions Macros Disable_Lights_After_Print]
+name: Disable Lights After Print
+icon: light
+
+[menu __main Actions Macros Disable_Lights_After_Print ENABLE]
+name: ENABLE
+icon: complete
+method: printer.gcode.script
+params: {"script":"DISABLE_LIGHTS_AFTER_PRINT value=1"}
+
+[menu __main Actions Macros Disable_Lights_After_Print DISABLE]
+name: DISABLE
+icon: cancel
+method: printer.gcode.script
+params: {"script":"DISABLE_LIGHTS_AFTER_PRINT value=0"}
+
+
+
+[menu __main Actions Macros Unload_After_Print]
+name: Unload After Print
+icon: extrude
+
+[menu __main Actions Macros Unload_After_Print ENABLE]
+name: ENABLE
+icon: complete
+method: printer.gcode.script
+params: {"script":"UNLOAD_AFTER_PRINT value=1"}
+
+[menu __main Actions Macros Unload_After_Print DISABLE]
+name: DISABLE
+icon: cancel
+method: printer.gcode.script
+params: {"script":"UNLOAD_AFTER_PRINT value=0"}
+
+
+
 [menu __main Actions Macros Shutdown_After_Print]
 name: Shutdown After Print
 icon: shutdown
