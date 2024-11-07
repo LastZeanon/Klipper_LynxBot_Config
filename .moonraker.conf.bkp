@@ -308,14 +308,14 @@ managed_services = KlipperScreen
 [update_manager moonraker-telegram-bot]
 type = git_repo
 path = ~/moonraker-telegram-bot
-origin = https://github.com/nlef/moonraker-telegram-bot.git
+origin = https://github.com/LynxCrew/moonraker-telegram-bot.git
 env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
 
 [update_manager Klippain-ShakeTune]
 type = git_repo
-origin = https://github.com/Frix-x/klippain-shaketune.git
+origin = https://github.com/LynxCrew/klippain-shaketune.git
 path = ~/klippain_shaketune
 virtualenv = ~/klippy-env
 requirements = requirements.txt
