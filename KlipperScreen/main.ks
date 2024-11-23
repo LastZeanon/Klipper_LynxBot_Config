@@ -2,6 +2,7 @@
 job_complete_timeout: 300
 use_default_menu: False
 use_default_move_menu: False
+enable_lock: False
 
 [printer LynxBot]
 camera_url: http://127.0.0.1/webcam/?action=stream
