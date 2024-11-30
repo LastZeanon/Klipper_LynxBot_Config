@@ -22,17 +22,18 @@ icon: light
 name: {{ gettext('Move') }}
 icon: move
 panel: move_lynxbot
-enable: {{ (printer.pause_resume.is_paused == True) }}
+enable: {{ (printer.pause_resume.is_paused) }}
 
 [menu __print Filament]
 name: Filament
 icon: filament
+enable: {{ printer.pause_resume.is_paused }}
 
 [menu __print Extrude]
 name: {{ gettext('Extrude') }}
 icon: filament
 panel: extrude_lynxbot
-enable: {{ (printer.pause_resume.is_paused == True) and (printer.extruders.count > 0) }}
+enable: {{ (printer.pause_resume.is_paused) and (printer.extruders.count > 0) }}
 
 [menu __print Macros]
 name: macros
