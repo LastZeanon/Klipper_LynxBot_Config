@@ -1,4 +1,4 @@
-[verify_heater heater_config_name]
+[verify_heater extruder]
 max_error: 240 # double if needed
 check_gain_time: 45 #default for extruder is 20, 60 for bed heater. increase for weak heaters. 
 hysteresis: 15 #default is 5, this is the maximum allowable deviation from setpoint. increase during PID tuning. 
