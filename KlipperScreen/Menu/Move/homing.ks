@@ -38,6 +38,7 @@ method: printer.gcode.script
 params: {"script":"ADJUST_Z_TILT"}
 enable: {{ printer.home_full }}
 # active: {{ printer.z_tilt_ng.applied }}
+active: {{ printer.z_tilt.applied }}
 
 [menu move homing Z-Tilt]
 name: {{ gettext('Z Tilt') }}
