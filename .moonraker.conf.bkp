@@ -246,6 +246,8 @@ type = web
 channel = stable
 repo = LynxCrew/mainsail
 path = ~/mainsail
+info_tags = 
+	desc=Mainsail
 
 [update_manager mainsail-config]
 type = git_repo
@@ -253,12 +255,16 @@ primary_branch = master
 path = ~/mainsail-config
 origin = https://github.com/LynxCrew/mainsail-config.git
 managed_services = klipper
+info_tags = 
+	desc=Mainsail Config
 
 [update_manager fluidd]
 type = web
 channel = stable
 repo = fluidd-core/fluidd
 path = ~/fluidd
+info_tags = 
+	desc=Fluidd
 
 [update_manager fluidd-config]
 type = git_repo
@@ -266,6 +272,8 @@ primary_branch = master
 path = ~/fluidd-config
 origin = https://github.com/LynxCrew/fluidd-config.git
 managed_services = klipper
+info_tags = 
+	desc=Fluidd Config
 
 [update_manager beacon]
 type = git_repo
@@ -287,6 +295,8 @@ origin = https://github.com/mainsail-crew/sonar.git
 primary_branch = main
 managed_services = sonar
 install_script = tools/install.sh
+info_tags = 
+	desc=Sonar
 
 [update_manager crowsnest]
 type = git_repo
@@ -294,6 +304,8 @@ path = ~/crowsnest
 origin = https://github.com/mainsail-crew/crowsnest.git
 managed_services = crowsnest
 install_script = tools/install.sh
+info_tags = 
+	desc=Crowsnest
 
 [update_manager timelapse]
 type = git_repo
@@ -301,6 +313,8 @@ primary_branch = main
 path = ~/moonraker-timelapse
 origin = https://github.com/mainsail-crew/moonraker-timelapse.git
 managed_services = klipper moonraker
+info_tags = 
+	desc=Timelapse
 
 [update_manager KlipperScreen]
 type = git_repo
@@ -310,6 +324,8 @@ env = ~/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
 managed_services = KlipperScreen
+info_tags = 
+	desc=KlipperScreen
 
 [update_manager moonraker-telegram-bot]
 type = git_repo
@@ -318,6 +334,8 @@ origin = https://github.com/LynxCrew/moonraker-telegram-bot.git
 env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
+info_tags = 
+	desc=Moonraker Telegram Bot
 
 [update_manager Klippain-ShakeTune]
 type = git_repo
@@ -328,6 +346,8 @@ requirements = requirements.txt
 system_dependencies = system-dependencies.json
 primary_branch = main
 managed_services = klipper
+info_tags = 
+	desc=Klippain Shaketune
 
 [update_manager klipper_tmc_autotune]
 type = git_repo
@@ -337,6 +357,8 @@ origin = https://github.com/LynxCrew/klipper_tmc_autotune.git
 managed_services = klipper
 primary_branch = main
 install_script = install.sh
+info_tags = 
+	desc=TMC Autotune
 
 [update_manager chopper-resonance-tuner]
 type = git_repo
@@ -344,6 +366,8 @@ path = ~/chopper-resonance-tuner/
 origin = https://github.com/LynxCrew/chopper-resonance-tuner.git
 primary_branch = main
 managed_services = klipper
+info_tags = 
+	desc=Chopper Resonance Tuner
 
 [update_manager led_effect]
 type = git_repo
@@ -351,6 +375,8 @@ channel = dev
 path = ~/klipper-led_effect
 origin = https://github.com/LynxCrew/klipper-led_effect.git
 is_system_service = False
+info_tags = 
+	desc=Led Effect
 
 [update_manager intelligent_default_mesh]
 type = git_repo
@@ -360,6 +386,8 @@ origin = https://github.com/LynxCrew/Intelligent_Default_Mesh.git
 managed_services = klipper
 primary_branch = master
 install_script = install.sh
+info_tags = 
+	desc=Intelligent Default Mesh
 
 [update_manager intelligent_beacon_model]
 type = git_repo
@@ -369,11 +397,15 @@ origin = https://github.com/LynxCrew/Intelligent_Beacon_Model.git
 managed_services = klipper
 primary_branch = master
 install_script = install.sh
+info_tags = 
+	desc=Intelligent Beacon Model
 
-[update_manager mcu_flasher]
+[update_manager moonraker_mcu_flasher]
 type = git_repo
 path = ~/moonraker-mcu-flasher
 origin = https://github.com/LynxCrew/moonraker-mcu-flasher.git
 is_system_service = False
 managed_services = klipper moonraker
+info_tags = 
+	desc=Moonraker MCU Flasher
 
